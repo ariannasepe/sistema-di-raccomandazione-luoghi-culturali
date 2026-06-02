@@ -23,7 +23,16 @@ from user_profile import (
     UserProfile, get_area_centroid,
     TEMI, TIPOLOGIE, REGIONI, PROFILI_PREDEFINITI
 )
-from recommender import raccomanda, spiega_raccomandazione
+
+try:
+    from recommender import raccomanda, spiega_raccomandazione
+except ImportError as e:
+    st.error("Errore nell'import di recommender.py")
+    st.code(str(e))
+    st.stop()
+except Exception as e:
+    st.error(f"Errore durante l'import: {e}")
+    st.stop()
 
 LIKERT_SCALE = {
     "Per nulla": 0.0,
