@@ -134,6 +134,8 @@ def load_data() -> pd.DataFrame:
     except Exception as e:
         st.error(f"Errore nel caricamento del dataset: {e}")
         st.stop()
+
+df = load_data()
 # ── Colori marker per tipologia ───────────────────────────────────────────────
 
 COLORI_FOLIUM = {
