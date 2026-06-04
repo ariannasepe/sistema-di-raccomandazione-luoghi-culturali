@@ -431,36 +431,18 @@ with st.sidebar:
         if indirizzo_input.strip():
             try:
                 from opencage.geocoder import OpenCageGeocode
-                geocoder = OpenCageGeocode("LA_TUA_API_KEY")
-                
-                # Prima prendi le coordinate del comune dal dataset
-                comune_coords = df[df["comune"].str.lower() == area_valore.lower()]
-                if not comune_coords.empty:
-                    lat_c = comune_coords["lat"].mean()
-                    lon_c = comune_coords["lon"].mean()
-                    # Bounding box di ~15km attorno al comune
-                    bounds = f"{lon_c-0.15},{lat_c-0.15},{lon_c+0.15},{lat_c+0.15}"
-                    results = geocoder.geocode(
-                        indirizzo_input, 
-                        language="it", 
-                        countrycode="it",
-                        bounds=bounds
-                    )
-                else:
-                    results = geocoder.geocode(
-                        f"{indirizzo_input}, {area_valore}, Italia",
-                        language="it",
-                        countrycode="it"
-                    )
-                    
+                geocoder = OpenCageGeocode("646511d641a34b2a8bb2fe5cebb1f32d")
+                query = f"{indirizzo_input}, {area_valore}, Italia"
+                results = geocoder.geocode(query, language="it", countrycode="it")
                 if results:
                     lat_indirizzo = results[0]["geometry"]["lat"]
                     lon_indirizzo = results[0]["geometry"]["lng"]
                     st.success(f"{results[0]['formatted']}")
                 else:
                     st.warning("Indirizzo non trovato nel comune selezionato. La ricerca partirà dal centro del comune.")
-            except Exception as e:
+            except Exception:
                 st.warning("Servizio di geolocalizzazione non disponibile. La ricerca partirà dal centro del comune.")
+
 
     raggio_km = st.slider("Raggio di ricerca (km)", 10, 300, 50, 10)
     solo_accessibile = st.checkbox("Solo luoghi accessibili ai disabili")
