@@ -523,7 +523,7 @@ if risultati.empty:
     st.error("Nessun luogo trovato con i criteri selezionati. Prova ad aumentare il raggio o a selezionare più tipologie.")
     st.stop()
 
-if area_tipo == "Indirizzo" and lat_indirizzo and lon_indirizzo:
+if lat_indirizzo and lon_indirizzo:
     centroid = (lat_indirizzo, lon_indirizzo)
 else:
     centroid = get_area_centroid(profilo, df)
