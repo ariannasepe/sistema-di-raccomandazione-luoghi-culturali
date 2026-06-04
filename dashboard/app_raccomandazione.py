@@ -16,6 +16,7 @@ Struttura:
 import streamlit as st
 import pandas as pd
 import folium
+import os
 from streamlit_folium import st_folium
 
 from user_profile import (
@@ -637,5 +638,5 @@ with st.expander("Nota metodologica"):
     I risultati dipendono dalla completezza e dall'aggiornamento del dataset utilizzato. Le raccomandazioni riflettono le preferenze dichiarate dall'utente e le informazioni disponibili nel sistema e non tengono conto di fattori esterni quali recensioni recenti, eventi temporanei, disponibilità di accesso o variazioni dell'offerta culturale successive all'aggiornamento del database.
 
     ---
-    *Fonte dati: OpenStreetMap via Overpass API, ISTAT. Elaborazione: Python (Pandas, Numpy, Folium, Streamlit).*
+    *Fonte dati: OpenStreetMap via Overpass API, ISTAT. Elaborazione: Python (Pandas, Numpy, Folium, Geopy, Streamlit).*
     """)
