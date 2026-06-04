@@ -434,7 +434,7 @@ with st.sidebar:
             try:
                 from geopy.geocoders import Nominatim
                 from geopy.exc import GeocoderTimedOut
-                geolocator = Nominatim(user_agent="sistema_raccomandazione_culturale")
+                geolocator = Nominatim(user_agent="sistema_raccomandazione_luoghi_culturali_italia_v1")
                 query = f"{indirizzo_input}, {area_valore}, Italia"
                 location = geolocator.geocode(query, timeout=10)
                 if location:
