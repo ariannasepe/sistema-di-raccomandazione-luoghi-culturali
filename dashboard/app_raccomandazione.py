@@ -432,7 +432,7 @@ with st.sidebar:
             try:
                 from opencage.geocoder import OpenCageGeocode
                 geocoder = OpenCageGeocode("646511d641a34b2a8bb2fe5cebb1f32d")
-                query = f"{indirizzo_input}, {area_valore}, Italia"
+                query = f"{indirizzo_input}, comune di {area_valore}, Italia"
                 results = geocoder.geocode(query, language="it", countrycode="it")
                 if results:
                     lat_indirizzo = results[0]["geometry"]["lat"]
