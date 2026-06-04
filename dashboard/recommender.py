@@ -103,7 +103,17 @@ def raccomanda(
     df = df.copy()
 
     # ── 1. Centroide area utente ──────────────────────────────────────
-    centroid = get_area_centroid(profilo, df)
+    if profilo.area.get("tipo") == "indirizzo":
+        centroid = profilo.area.get("centroid")
+        if not centroid:
+            return pd.DataFrame()
+        lat_u, lon_u = centroid
+    else:
+        centroid = get_area_centroid(profilo, df)
+        if centroid is None:
+            return pd.DataFrame()
+        lat_u, lon_u = centroid
+
     if centroid is None:
         return pd.DataFrame(columns=["nome", "tipologia", "tema_principale",
                                      "comune", "regione", "distanza_km", "score"])
