@@ -461,7 +461,8 @@ profilo = UserProfile(
     solo_accessibile=solo_accessibile,
 )
 
-if area_tipo == "Indirizzo" and lat_indirizzo and lon_indirizzo:
+if lat_indirizzo and lon_indirizzo:
+    area["tipo"] = "indirizzo"
     area["centroid"] = (lat_indirizzo, lon_indirizzo)
 
 # ── Header principale ─────────────────────────────────────────────────────────
