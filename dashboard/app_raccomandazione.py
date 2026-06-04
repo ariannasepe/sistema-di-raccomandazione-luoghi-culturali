@@ -337,7 +337,22 @@ section[data-testid="stSidebar"] [data-testid="stSlider"] div[role="slider"] {
 
 @st.cache_data
 def load_data() -> pd.DataFrame:
-    return pd.read_csv("dataset_sistema.csv")
+    # Ottieni il percorso assoluto della cartella dove si trova app_raccomandazione.py
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    csv_path = os.path.join(base_dir, "dataset_sistema.csv")
+    
+    try:
+        df = pd.read_csv(csv_path)
+        print(f"Dataset caricato correttamente: {len(df)} righe da {csv_path}")
+        return df
+        
+    except FileNotFoundError:
+        st.error(f"File non trovato: {csv_path}")
+        st.info("Assicurati che `dataset_sistema.csv` sia nella stessa cartella di app_raccomandazione.py")
+        st.stop()
+    except Exception as e:
+        st.error(f"Errore nel caricamento del dataset: {e}")
+        st.stop()
 
 df = load_data()
 
