@@ -24,8 +24,6 @@ from user_profile import (
     TEMI, TIPOLOGIE, REGIONI, PROFILI_PREDEFINITI
 )
 from recommender import raccomanda, spiega_raccomandazione
-from geopy.geocoders import Nominatim
-from geopy.exc import GeocoderTimedOut
 
 LIKERT_SCALE = {
     "Per nulla": 0.0,
@@ -432,18 +430,17 @@ with st.sidebar:
         indirizzo_input = st.text_input("Indirizzo specifico (opzionale)", placeholder="Es. Via Roma 1")
         if indirizzo_input.strip():
             try:
-                from geopy.geocoders import Nominatim
-                from geopy.exc import GeocoderTimedOut
-                geolocator = Nominatim(user_agent="sistema_raccomandazione_luoghi_culturali_italia_v1")
+                from opencage.geocoder import OpenCageGeocode
+                geocoder = OpenCageGeocode("646511d641a34b2a8bb2fe5cebb1f32d")
                 query = f"{indirizzo_input}, {area_valore}, Italia"
-                location = geolocator.geocode(query, timeout=10)
-                if location:
-                    lat_indirizzo = location.latitude
-                    lon_indirizzo = location.longitude
-                    st.success(f"{location.address}")
+                results = geocoder.geocode(query, language="it", countrycode="it")
+                if results:
+                    lat_indirizzo = results[0]["geometry"]["lat"]
+                    lon_indirizzo = results[0]["geometry"]["lng"]
+                    st.success(f"{results[0]['formatted']}")
                 else:
                     st.warning("Indirizzo non trovato nel comune selezionato. La ricerca partirà dal centro del comune.")
-            except GeocoderTimedOut:
+            except Exception:
                 st.warning("Servizio di geolocalizzazione non disponibile. La ricerca partirà dal centro del comune.")
 
     raggio_km = st.slider("Raggio di ricerca (km)", 10, 300, 50, 10)
@@ -638,5 +635,5 @@ with st.expander("Nota metodologica"):
     I risultati dipendono dalla completezza e dall'aggiornamento del dataset utilizzato. Le raccomandazioni riflettono le preferenze dichiarate dall'utente e le informazioni disponibili nel sistema e non tengono conto di fattori esterni quali recensioni recenti, eventi temporanei, disponibilità di accesso o variazioni dell'offerta culturale successive all'aggiornamento del database.
 
     ---
-    *Fonte dati: OpenStreetMap via Overpass API, ISTAT. Elaborazione: Python (Pandas, Numpy, Folium, Geopy, Streamlit).*
+    *Fonte dati: OpenStreetMap via Overpass API, ISTAT. Elaborazione: Python (Pandas, Numpy, Folium, Streamlit).*
     """)
