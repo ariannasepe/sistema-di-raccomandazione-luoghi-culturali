@@ -352,21 +352,19 @@ section[data-testid="stSidebar"] .stSlider {
     margin-top: 0.6rem !important;
     margin-bottom: 0.7rem !important;
 }
-/* === NOMI TEMI IN GRASSETTO - SELETTORI AGGRESSIVI === */
+/* Nomi dei TEMI in GRASSETTO + più visibile */
 section[data-testid="stSidebar"] .stSlider label,
-section[data-testid="stSidebar"] label,
-section[data-testid="stSidebar"] .st-emotion-cache-1g8p9f8 label,   /* classi comuni di Streamlit */
-section[data-testid="stSidebar"] div.stSlider > label,
-section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] label {
-    font-weight: 800 !important;
-    font-size: 0.82rem !important;
-    color: #ffffff !important;
-    letter-spacing: 0.015em !important;
+section[data-testid="stSidebar"] label[for*="tema_"],
+section[data-testid="stSidebar"] .stSelectSlider label {
+    font-weight: 800 !important;           /* Grassetto forte */
+    font-size: 0.83rem !important;
+    color: #ffffff !important;             /* Bianco per contrasto */
+    letter-spacing: 0.03em !important;
 }
 
-/* Forza su tutti i possibili label nella sidebar */
-section[data-testid="stSidebar"] label {
-    font-weight: 700 !important;
+/* Opzionale: un po' di spazio sopra ogni slider */
+section[data-testid="stSidebar"] .stSlider {
+    margin-top: 0.7rem !important;
 }
 </style>
 """, unsafe_allow_html=True)
