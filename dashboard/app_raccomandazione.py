@@ -330,37 +330,22 @@ section[data-testid="stSidebar"] [data-testid="stSlider"] div[role="slider"] {
     letter-spacing: normal !important;
     font-size: 0.85rem !important;
 }
-/* === SCALA LIKERT - VERSIONE ULTRA COMPATTA === */
-
-/* Riduce drasticamente la dimensione delle etichette dei valori (Abbastanza, Per nulla, ecc.) */
-section[data-testid="stSidebar"] div[data-baseweb="slider"] span,
-section[data-testid="stSidebar"] .stSelectbox div[role="slider"] ~ div span,
-section[data-testid="stSidebar"] div[data-baseweb="slider"] .css-1a7z0z0, /* fallback */
-section[data-testid="stSidebar"] div[data-baseweb="slider"] .css-16k0p4z {
-    font-size: 0.64rem !important;
-    line-height: 1.05 !important;
+/* FORZA ridimensionamento testi della scala Likert */
+section[data-testid="stSidebar"] [data-baseweb="slider"] span,
+section[data-testid="stSidebar"] .stSelectSlider span,
+section[data-testid="stSidebar"] div[role="slider"] + div span,
+section[data-testid="stSidebar"] [data-baseweb="slider"] .css-1cpxqw9,
+section[data-testid="stSidebar"] [data-baseweb="slider"] div > span {
+    font-size: 0.58rem !important;
+    line-height: 1 !important;
+    color: #a3d4f0 !important;     /* colore più chiaro */
     font-weight: 500 !important;
-    color: #b3dff5 !important;
 }
 
-/* Riduce anche il nome del tema (Archeologia, Arte antica, ecc.) */
-section[data-testid="stSidebar"] .stSlider label,
+/* Nome del tema (Archeologia, Arte antica...) */
+section[data-testid="stSidebar"] .stSlider > label,
 section[data-testid="stSidebar"] label[for*="tema_"] {
-    font-size: 0.81rem !important;
-    font-weight: 600 !important;
-    margin-bottom: 0.25rem !important;
-}
-
-/* Spazio extra tra tema e slider per evitare sovrapposizioni */
-section[data-testid="stSidebar"] .stSlider {
-    margin-top: 0.55rem !important;
-    margin-bottom: 0.65rem !important;
-}
-
-/* Forza dimensione ancora più piccola se necessario */
-section[data-testid="stSidebar"] div[role="listbox"] span,
-section[data-testid="stSidebar"] .stSlider .css-1cpxqw9 {
-    font-size: 0.62rem !important;
+    font-size: 0.79rem !important;
 }
 </style>
 """, unsafe_allow_html=True)
