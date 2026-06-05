@@ -330,22 +330,27 @@ section[data-testid="stSidebar"] [data-testid="stSlider"] div[role="slider"] {
     letter-spacing: normal !important;
     font-size: 0.85rem !important;
 }
-/* FORZA ridimensionamento testi della scala Likert */
+/* === LIKERT SCALE - FORZA RIDUZIONE TESTO === */
 section[data-testid="stSidebar"] [data-baseweb="slider"] span,
 section[data-testid="stSidebar"] .stSelectSlider span,
 section[data-testid="stSidebar"] div[role="slider"] + div span,
-section[data-testid="stSidebar"] [data-baseweb="slider"] .css-1cpxqw9,
-section[data-testid="stSidebar"] [data-baseweb="slider"] div > span {
+section[data-testid="stSidebar"] [data-baseweb="slider"] .css-1cpxqw9 span,
+section[data-testid="stSidebar"] [data-baseweb="slider"] div > span,
+section[data-testid="stSidebar"] .stSlider div[data-baseweb="slider"] * {
     font-size: 0.58rem !important;
-    line-height: 1 !important;
-    color: #a3d4f0 !important;     /* colore più chiaro */
-    font-weight: 500 !important;
+    line-height: 1.0 !important;
+    color: #a8d0f0 !important;   /* colore più chiaro per distinguersi */
 }
 
 /* Nome del tema (Archeologia, Arte antica...) */
-section[data-testid="stSidebar"] .stSlider > label,
-section[data-testid="stSidebar"] label[for*="tema_"] {
-    font-size: 0.79rem !important;
+section[data-testid="stSidebar"] .stSlider label {
+    font-size: 0.80rem !important;
+}
+
+/* Spazio extra tra tema e slider */
+section[data-testid="stSidebar"] .stSlider {
+    margin-top: 0.6rem !important;
+    margin-bottom: 0.7rem !important;
 }
 </style>
 """, unsafe_allow_html=True)
