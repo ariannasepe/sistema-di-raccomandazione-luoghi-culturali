@@ -330,8 +330,37 @@ section[data-testid="stSidebar"] [data-testid="stSlider"] div[role="slider"] {
     letter-spacing: normal !important;
     font-size: 0.85rem !important;
 }
-section[data-testid="stSidebar"] .stSlider div[aria-valuetext] {
-    font-size: 0.65rem !important;
+/* === SCALA LIKERT - VERSIONE ULTRA COMPATTA === */
+
+/* Riduce drasticamente la dimensione delle etichette dei valori (Abbastanza, Per nulla, ecc.) */
+section[data-testid="stSidebar"] div[data-baseweb="slider"] span,
+section[data-testid="stSidebar"] .stSelectbox div[role="slider"] ~ div span,
+section[data-testid="stSidebar"] div[data-baseweb="slider"] .css-1a7z0z0, /* fallback */
+section[data-testid="stSidebar"] div[data-baseweb="slider"] .css-16k0p4z {
+    font-size: 0.64rem !important;
+    line-height: 1.05 !important;
+    font-weight: 500 !important;
+    color: #b3dff5 !important;
+}
+
+/* Riduce anche il nome del tema (Archeologia, Arte antica, ecc.) */
+section[data-testid="stSidebar"] .stSlider label,
+section[data-testid="stSidebar"] label[for*="tema_"] {
+    font-size: 0.81rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.25rem !important;
+}
+
+/* Spazio extra tra tema e slider per evitare sovrapposizioni */
+section[data-testid="stSidebar"] .stSlider {
+    margin-top: 0.55rem !important;
+    margin-bottom: 0.65rem !important;
+}
+
+/* Forza dimensione ancora più piccola se necessario */
+section[data-testid="stSidebar"] div[role="listbox"] span,
+section[data-testid="stSidebar"] .stSlider .css-1cpxqw9 {
+    font-size: 0.62rem !important;
 }
 </style>
 """, unsafe_allow_html=True)
