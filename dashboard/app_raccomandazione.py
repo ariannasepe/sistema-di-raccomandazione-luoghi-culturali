@@ -330,8 +330,8 @@ section[data-testid="stSidebar"] [data-testid="stSlider"] div[role="slider"] {
     letter-spacing: normal !important;
     font-size: 0.85rem !important;
 }
-section[data-testid="stSidebar"] div[data-baseweb="slider"] span {
-    font-size: 0.59rem !important;
+section[data-testid="stSidebar"] .stSlider div[aria-valuetext] {
+    font-size: 0.65rem !important;
 }
 </style>
 """, unsafe_allow_html=True)
