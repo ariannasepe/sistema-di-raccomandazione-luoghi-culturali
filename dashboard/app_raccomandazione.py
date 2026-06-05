@@ -352,6 +352,14 @@ section[data-testid="stSidebar"] .stSlider {
     margin-top: 0.6rem !important;
     margin-bottom: 0.7rem !important;
 }
+/* Nomi dei temi in GRASSETTO */
+section[data-testid="stSidebar"] .stSlider label,
+section[data-testid="stSidebar"] label[for*="tema_"] {
+    font-size: 0.81rem !important;
+    font-weight: 700 !important;     /* ← Questo rende il testo in grassetto */
+    color: #ffffff !important;       /* opzionalmente più visibile */
+    letter-spacing: 0.02em;
+}
 </style>
 """, unsafe_allow_html=True)
 
