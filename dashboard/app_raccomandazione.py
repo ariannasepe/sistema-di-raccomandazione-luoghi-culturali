@@ -330,14 +330,8 @@ section[data-testid="stSidebar"] [data-testid="stSlider"] div[role="slider"] {
     letter-spacing: normal !important;
     font-size: 0.85rem !important;
 }
-/* Scala Likert molto compatta */
-section[data-testid="stSidebar"] div[data-baseweb="slider"] {
-    font-size: 0.71rem !important;
-}
-
 section[data-testid="stSidebar"] div[data-baseweb="slider"] span {
-    font-size: 0.69rem !important;
-    line-height: 1.1 !important;
+    font-size: 0.59rem !important;
 }
 </style>
 """, unsafe_allow_html=True)
