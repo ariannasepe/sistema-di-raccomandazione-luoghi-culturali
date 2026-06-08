@@ -404,6 +404,27 @@ section[data-testid="stSidebar"] .stSelectSlider label {
 section[data-testid="stSidebar"] .stSlider {
     margin-top: 0.7rem !important;
 }
+/* Input text e text area nella sidebar: testo scuro su sfondo chiaro */
+section[data-testid="stSidebar"] input[type="text"],
+section[data-testid="stSidebar"] input[type="text"]::placeholder,
+section[data-testid="stSidebar"] textarea,
+section[data-testid="stSidebar"] .stTextInput input,
+section[data-testid="stSidebar"] .stTextArea textarea {
+    color: #222222 !important;           /* testo scuro */
+    background-color: #ffffff !important; /* sfondo bianco */
+    border: 1px solid #b3dff5 !important;
+    border-radius: 6px !important;
+}
+section[data-testid="stSidebar"] input[type="text"]:focus,
+section[data-testid="stSidebar"] .stTextInput input:focus {
+    border-color: #4FC3F7 !important;
+    box-shadow: 0 0 0 2px rgba(79,195,247,0.2) !important;
+}
+/* Placeholder più scuro */
+section[data-testid="stSidebar"] ::placeholder {
+    color: #999999 !important;
+    opacity: 1 !important;
+}
 </style>
 """, unsafe_allow_html=True)
 # ── Caricamento dataset ───────────────────────────────────────────────────────
