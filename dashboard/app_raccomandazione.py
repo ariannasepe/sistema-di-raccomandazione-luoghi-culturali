@@ -366,28 +366,7 @@ section[data-testid="stSidebar"] .stSelectSlider label {
 section[data-testid="stSidebar"] .stSlider {
     margin-top: 0.7rem !important;
 }
-/* Forza colore arancione su tutti gli elementi interattivi della sidebar */
-section[data-testid="stSidebar"] [role="slider"] {
-    background-color: #F0951D !important;
-    border-color: #F0951D !important;
-}
-section[data-testid="stSidebar"] .st-emotion-cache-1inwz65,
-section[data-testid="stSidebar"] [data-baseweb="slider"] [data-testid="stSliderTrackFill"] {
-    background-color: #F0951D !important;
-}
-section[data-testid="stSidebar"] button[kind="primary"],
-section[data-testid="stSidebar"] button[data-testid="baseButton-primary"],
-section[data-testid="stSidebar"] .stButton button[type="submit"],
-section[data-testid="stSidebar"] div[data-testid="stFormSubmitButton"] button {
-    background-color: #F0951D !important;
-    border-color: #F0951D !important;
-    color: #ffffff !important;
-}
-section[data-testid="stSidebar"] [data-baseweb="radio"] [data-checked="true"] div,
-section[data-testid="stSidebar"] [data-baseweb="radio"] input:checked + div {
-    background-color: #F0951D !important;
-    border-color: #F0951D !important;
-}
+
 </style>
 """, unsafe_allow_html=True)
 
