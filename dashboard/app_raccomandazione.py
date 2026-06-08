@@ -59,82 +59,53 @@ st.markdown("""
     --c-accent:  #F0951D;
 }
 
-html, body, [class*="css"] {
-    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif !important;
-    background-color: var(--c-bg) !important;
-    color: var(--c-text) !important;
-}
-[data-testid="stAppViewContainer"],
-[data-testid="stAppViewBlockContainer"],
-.main, .block-container {
-    background-color: #4FC3F7 !important;
-}
-
-/* Sidebar */
-section[data-testid="stSidebar"] > div:first-child {
-    background: linear-gradient(175deg, #0d2d44 0%, #25465D 40%, #1a6a9a 80%, #4FC3F7 100%) !important;
-    box-shadow: 4px 0 24px rgba(0,0,0,0.2);
-}
-
 /* ==================== SLIDERS ==================== */
+/* Traccia dello slider (parte vuota) */
 section[data-testid="stSidebar"] [data-baseweb="slider"] > div:first-child {
-    background: #e5e7eb !important;           /* traccia grigia */
+    background: #334b66 !important;           /* Colore scuro della sidebar */
 }
-section[data-testid="stSidebar"] [data-baseweb="slider"] > div:first-child > div {
-    background: var(--c-accent) !important;   /* parte riempita arancione */
+
+/* Parte riempita dello slider */
+section[data-testid="stSidebar"] [data-baseweb="slider"] > div:first-child > div[data-testid="stSliderTrack"] > div {
+    background: var(--c-accent) !important;
 }
-section[data-testid="stSidebar"] [data-testid="stSlider"] div[role="slider"],
+
+/* Pallino dello slider */
 section[data-testid="stSidebar"] [data-baseweb="slider"] div[role="slider"] {
     background-color: var(--c-accent) !important;
-    border: 3px solid white !important;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2) !important;
+    border: 3px solid #ffffff !important;
+    box-shadow: 0 0 0 4px rgba(240, 149, 29, 0.3) !important;
 }
 
-/* Radio buttons (Regione/Comune) - mantengono pallino bianco */
-section[data-testid="stSidebar"] [data-testid="stRadio"] label {
-    color: #e8f4fb !important;
-}
-section[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] {
-    gap: 8px;
-}
-
-/* ==================== BUTTONS ==================== */
-/* Pulsante primario "Cerca luoghi" */
+/* ==================== BUTTON "CERCA LUOGHI" ==================== */
 button[data-testid="baseButton-primary"] {
     background-color: var(--c-accent) !important;
-    color: white !important;
+    color: #ffffff !important;
     border: none !important;
     font-weight: 600 !important;
     border-radius: 8px !important;
-    padding: 0.75rem 1.5rem !important;
+    padding: 12px 24px !important;
+    box-shadow: 0 4px 12px rgba(240, 149, 29, 0.4) !important;
 }
 button[data-testid="baseButton-primary"]:hover {
     background-color: #e07f0c !important;
-    color: white !important;
-    box-shadow: 0 4px 12px rgba(240, 149, 29, 0.5) !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 16px rgba(240, 149, 29, 0.5) !important;
+}
+
+/* Radio buttons (Regione / Comune) */
+section[data-testid="stSidebar"] [data-testid="stRadio"] label {
+    color: #e8f4fb !important;
 }
 
 /* Altri pulsanti nella sidebar */
 div[data-testid="stSidebar"] .stButton > button {
-    width: 100%;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.08) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
     color: #e8f4fb !important;
-    border-radius: 8px;
-    font-size: 0.84rem;
-    font-weight: 500;
-    padding: 0.55rem 1rem;
-    margin-bottom: 5px;
-    transition: all 0.18s ease;
-    text-align: left;
-}
-div[data-testid="stSidebar"] .stButton > button:hover {
-    background: rgba(255,255,255,0.18);
-    border-color: rgba(255,255,255,0.35);
-    color: #ffffff !important;
 }
 
-/* Altri elementi accent */
+/* Accent colors */
 .section-label {
     color: var(--c-accent) !important;
 }
@@ -143,41 +114,35 @@ div[data-testid="stSidebar"] .stButton > button:hover {
 }
 
 /* ====================== RESTO DEL CSS ORIGINALE ====================== */
+html, body, [class*="css"] {
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif !important;
+}
+
+[data-testid="stAppViewContainer"],
+[data-testid="stAppViewBlockContainer"],
+.main, .block-container {
+    background-color: #4FC3F7 !important;
+}
+
+section[data-testid="stSidebar"] > div:first-child {
+    background: linear-gradient(175deg, #0d2d44 0%, #25465D 40%, #1a6a9a 80%, #4FC3F7 100%) !important;
+}
+
 section[data-testid="stSidebar"] *:not([data-testid="stExpander"] summary):not([data-testid="stExpander"] summary *) {
     color: #e8f4fb !important;
-    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif !important;
 }
 
-section[data-testid="stSidebar"] [data-testid="stExpander"] summary {
-    text-transform: none !important;
-    letter-spacing: normal !important;
-    font-size: 0.85rem !important;
-    color: #e8f4fb !important;
-    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif !important;
-}
-section[data-testid="stSidebar"] h2, section[data-testid="stSidebar"] h3, section[data-testid="stSidebar"] h4 {
-    color: #ffffff !important;
-    font-weight: 700 !important;
-}
-section[data-testid="stSidebar"] hr {
-    border-color: rgba(255,255,255,0.15) !important;
-    margin: 1rem 0;
-}
 section[data-testid="stSidebar"] label {
-    font-size: 0.72rem !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.09em !important;
-    text-transform: uppercase !important;
     color: #b3dff5 !important;
-} 
+}
 
-.main-header h1 { color: #25465D !important; }
-.section-title { color: #25465D !important; }
+.main-header h1, .section-title {
+    color: #25465D !important;
+}
 
-/* Slider testo piccolo */
-section[data-testid="stSidebar"] [data-baseweb="slider"] span,
-section[data-testid="stSidebar"] .stSlider label {
-    font-size: 0.58rem !important;
+/* Pulizia generale */
+section[data-testid="stSidebar"] [data-baseweb="slider"] span {
+    color: #b3dff5 !important;
 }
 </style>
 """, unsafe_allow_html=True)
