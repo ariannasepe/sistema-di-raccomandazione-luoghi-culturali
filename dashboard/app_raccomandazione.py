@@ -106,7 +106,7 @@ section[data-testid="stSidebar"] label {
     color: #b3dff5 !important;
 }
 
-/* ===== SLIDER SIDEBAR (esattamente come dashboard monitoraggio) ===== */
+/* ===== SLIDER SIDEBAR (barra blu scuro, pollice azzurro) ===== */
 section[data-testid="stSidebar"] div[data-testid="stSlider"] div[role="slider"] {
     background-color: #4FC3F7 !important;
     border-color: #4FC3F7 !important;
@@ -123,7 +123,7 @@ section[data-testid="stSidebar"] [data-testid="stSlider"] * {
     --slider-track-fill-color: #25465D !important;
 }
 
-/* ===== MULTISELECT SIDEBAR (esattamente come dashboard monitoraggio) ===== */
+/* ===== MULTISELECT SIDEBAR ===== */
 section[data-testid="stSidebar"] div[data-testid="stMultiSelect"] > div > div {
     background-color: rgba(255,255,255,0.08) !important;
     border: 1px solid rgba(255,255,255,0.2) !important;
@@ -134,7 +134,7 @@ section[data-testid="stSidebar"] div[data-testid="stMultiSelect"] span[data-base
     border-radius: 6px !important;
 }
 
-/* ===== BOTTONI SIDEBAR (identici) ===== */
+/* ===== BOTTONI SIDEBAR (normali) ===== */
 div[data-testid="stSidebar"] .stButton > button {
     width: 100%;
     background: rgba(255,255,255,0.07);
@@ -153,6 +153,19 @@ div[data-testid="stSidebar"] .stButton > button:hover {
     border-color: rgba(255,255,255,0.35);
     color: #ffffff !important;
     transform: translateX(2px);
+}
+
+/* ===== BOTTONE PRIMARIO NELLA SIDEBAR (es. "Cerca luoghi") ===== */
+div[data-testid="stSidebar"] .stButton button[kind="primary"],
+div[data-testid="stSidebar"] button[data-testid="baseButton-primary"] {
+    background-color: #4FC3F7 !important;
+    color: white !important;
+    border: none !important;
+}
+div[data-testid="stSidebar"] .stButton button[kind="primary"]:hover,
+div[data-testid="stSidebar"] button[data-testid="baseButton-primary"]:hover {
+    background-color: #0299c7 !important;
+    color: white !important;
 }
 
 /* Header nativo e menu */
@@ -231,7 +244,7 @@ footer { visibility: hidden; }
 /* Divider */
 .divider { height: 1px; background: #b3dff5; margin: 1.5rem 0; }
 
-/* Insight box (spiegazione raccomandazione) */
+/* Insight box */
 .insight-box {
     background: #ffffff;
     border: 1px solid #b3dff5;
@@ -271,8 +284,6 @@ footer { visibility: hidden; }
     font-weight: 700;
     letter-spacing: 0.5px;
     float: right;
-}
-.score-badge {
     white-space: nowrap;
     flex-shrink: 0;
 }
@@ -374,19 +385,6 @@ section[data-testid="stSidebar"] .stSelectSlider label {
 
 section[data-testid="stSidebar"] .stSlider {
     margin-top: 0.7rem !important;
-}
-
-/* ===== BOTTONE PRIMARIO (azzurro) ===== */
-button[data-testid="baseButton-primary"],
-.stButton button[data-baseweb="button"][kind="primary"] {
-    background-color: #4FC3F7 !important;
-    color: white !important;
-    border: none !important;
-}
-button[data-testid="baseButton-primary"]:hover,
-.stButton button[data-baseweb="button"][kind="primary"]:hover {
-    background-color: #0299c7 !important;
-    color: white !important;
 }
 </style>
 """, unsafe_allow_html=True)
