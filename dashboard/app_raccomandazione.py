@@ -45,6 +45,7 @@ st.set_page_config(
 )
 
 # ── CSS (identico al progetto principale) ─────────────────────────────────────
+st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
@@ -102,11 +103,26 @@ section[data-testid="stSidebar"] label {
     letter-spacing: 0.09em !important;
     text-transform: uppercase !important;
     color: #b3dff5 !important;
-} 
+}
+
+/* ===== SLIDER SIDEBAR (esattamente come dashboard monitoraggio) ===== */
 section[data-testid="stSidebar"] div[data-testid="stSlider"] div[role="slider"] {
     background-color: #4FC3F7 !important;
     border-color: #4FC3F7 !important;
 }
+section[data-testid="stSidebar"] div[data-testid="stSlider"] [data-testid="stSliderTrackFill"] {
+    background: #25465D !important;
+    background-color: #25465D !important;
+}
+section[data-testid="stSidebar"] div[data-testid="stSlider"] div[data-baseweb="slider"] > div > div > div {
+    background: #25465D !important;
+    background-color: #25465D !important;
+}
+section[data-testid="stSidebar"] [data-testid="stSlider"] * {
+    --slider-track-fill-color: #25465D !important;
+}
+
+/* ===== MULTISELECT SIDEBAR (esattamente come dashboard monitoraggio) ===== */
 section[data-testid="stSidebar"] div[data-testid="stMultiSelect"] > div > div {
     background-color: rgba(255,255,255,0.08) !important;
     border: 1px solid rgba(255,255,255,0.2) !important;
@@ -116,6 +132,8 @@ section[data-testid="stSidebar"] div[data-testid="stMultiSelect"] span[data-base
     background-color: rgba(79,195,247,0.3) !important;
     border-radius: 6px !important;
 }
+
+/* ===== BOTTONI SIDEBAR (identici) ===== */
 div[data-testid="stSidebar"] .stButton > button {
     width: 100%;
     background: rgba(255,255,255,0.07);
@@ -136,6 +154,7 @@ div[data-testid="stSidebar"] .stButton > button:hover {
     transform: translateX(2px);
 }
 
+/* Header nativo e menu */
 header[data-testid="stHeader"] { background: transparent !important; }
 #MainMenu { visibility: hidden; }
 footer { visibility: hidden; }
@@ -178,13 +197,6 @@ footer { visibility: hidden; }
     font-size: 1.4rem; font-weight: 700;
     color: #25465D !important;
     margin: 0 0 1rem 0; letter-spacing: -0.01em;
-}
-
-/* Nav title sidebar */
-.nav-title {
-    font-size: 0.6rem; font-weight: 700;
-    letter-spacing: 2.5px; text-transform: uppercase;
-    color: #b3dff5 !important; margin-bottom: 0.5rem; display: block;
 }
 
 /* KPI card */
@@ -259,7 +271,7 @@ footer { visibility: hidden; }
     letter-spacing: 0.5px;
     float: right;
 }
-            .score-badge {
+.score-badge {
     white-space: nowrap;
     flex-shrink: 0;
 }
@@ -293,7 +305,8 @@ div[data-testid="stMainBlockContainer"] div[data-testid="stSelectbox"] > div > d
     border: 1.5px solid #b3dff5 !important;
     border-radius: 8px !important;
 }
-            [data-testid="stAlert"] {
+
+[data-testid="stAlert"] {
     color: #ffffff !important;
 }
 [data-testid="stAlert"] p {
@@ -309,12 +322,8 @@ section[data-testid="stSidebar"] [data-baseweb="tag"] span {
 section[data-testid="stSidebar"] [data-baseweb="tag"] button {
     color: #ffffff !important;
 }
-            /* Slider thumb */
-section[data-testid="stSidebar"] [data-testid="stSlider"] div[role="slider"] {
-    background-color: #4FC3F7 !important;
-    border-color: #4FC3F7 !important;
-}
-            [data-testid="stExpander"] {
+
+[data-testid="stExpander"] {
     background-color: #25465D !important;
     border-radius: 14px !important;
     border: none !important;
@@ -323,12 +332,13 @@ section[data-testid="stSidebar"] [data-testid="stSlider"] div[role="slider"] {
 [data-testid="stExpander"] strong {
     color: #ffffff !important;
 }
-            section[data-testid="stSidebar"] [data-testid="stExpander"] label {
+section[data-testid="stSidebar"] [data-testid="stExpander"] label {
     text-transform: none !important;
     letter-spacing: normal !important;
     font-size: 0.85rem !important;
 }
-/* === LIKERT SCALE - FORZA RIDUZIONE TESTO === */
+
+/* === LIKERT SCALE - riduzione testo === */
 section[data-testid="stSidebar"] [data-baseweb="slider"] span,
 section[data-testid="stSidebar"] .stSelectSlider span,
 section[data-testid="stSidebar"] div[role="slider"] + div span,
@@ -337,10 +347,10 @@ section[data-testid="stSidebar"] [data-baseweb="slider"] div > span,
 section[data-testid="stSidebar"] .stSlider div[data-baseweb="slider"] * {
     font-size: 0.58rem !important;
     line-height: 1.0 !important;
-    color: #a8d0f0 !important;   /* colore più chiaro per distinguersi */
+    color: #a8d0f0 !important;
 }
 
-/* Nome del tema (Archeologia, Arte antica...) */
+/* Nome del tema */
 section[data-testid="stSidebar"] .stSlider label {
     font-size: 0.80rem !important;
 }
@@ -350,24 +360,35 @@ section[data-testid="stSidebar"] .stSlider {
     margin-top: 0.6rem !important;
     margin-bottom: 0.7rem !important;
 }
-/* Nomi dei TEMI in GRASSETTO + più visibile */
+
+/* Nomi dei TEMI in grassetto */
 section[data-testid="stSidebar"] .stSlider label,
 section[data-testid="stSidebar"] label[for*="tema_"],
 section[data-testid="stSidebar"] .stSelectSlider label {
-    font-weight: 800 !important;           /* Grassetto forte */
+    font-weight: 800 !important;
     font-size: 0.83rem !important;
-    color: #ffffff !important;             /* Bianco per contrasto */
+    color: #ffffff !important;
     letter-spacing: 0.03em !important;
 }
 
-/* Opzionale: un po' di spazio sopra ogni slider */
 section[data-testid="stSidebar"] .stSlider {
     margin-top: 0.7rem !important;
 }
 
+/* ===== BOTTONE PRIMARIO (azzurro) ===== */
+button[data-testid="baseButton-primary"],
+.stButton button[data-baseweb="button"][kind="primary"] {
+    background-color: #4FC3F7 !important;
+    color: white !important;
+    border: none !important;
+}
+button[data-testid="baseButton-primary"]:hover,
+.stButton button[data-baseweb="button"][kind="primary"]:hover {
+    background-color: #0299c7 !important;
+    color: white !important;
+}
 </style>
-
-
+""", unsafe_allow_html=True)
 # ── Caricamento dataset ───────────────────────────────────────────────────────
 
 @st.cache_data
