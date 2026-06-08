@@ -75,7 +75,7 @@ section[data-testid="stSidebar"] > div:first-child {
     background: linear-gradient(175deg, #0d2d44 0%, #25465D 40%, #1a6a9a 80%, #4FC3F7 100%) !important;
     box-shadow: 4px 0 24px rgba(0,0,0,0.2);
 }
-section[data-testid="stSidebar"] *:not([data-testid="stExpander"] summary):not([data-testid="stExpander"] summary *) {
+section[data-testid="stSidebar"] *:not(input):not(textarea):not([data-testid="stExpander"] summary):not([data-testid="stExpander"] summary *) {
     color: #e8f4fb !important;
     font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif !important;
 }
@@ -185,25 +185,25 @@ section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup
     background-color: #ffffff !important;
 }
 
-/* ===== INPUT DI TESTO NELLA SIDEBAR (testo scuro, sfondo bianco) ===== */
-section[data-testid="stSidebar"] input[type="text"],
-section[data-testid="stSidebar"] input[type="text"]:focus,
-section[data-testid="stSidebar"] textarea,
-section[data-testid="stSidebar"] textarea:focus,
-section[data-testid="stSidebar"] .stTextInput input,
-section[data-testid="stSidebar"] .stTextInput input:focus,
-section[data-testid="stSidebar"] .stTextArea textarea,
-section[data-testid="stSidebar"] .stTextArea textarea:focus {
+/* ===== INPUT DI TESTO NELLA SIDEBAR ===== */
+/* Selettore specifico per l'input di Streamlit */
+section[data-testid="stSidebar"] div[data-baseweb="input"] input {
     color: #222222 !important;
     background-color: #ffffff !important;
     border: 1px solid #b3dff5 !important;
     border-radius: 6px !important;
-    outline: none !important;
 }
-section[data-testid="stSidebar"] input[type="text"]::placeholder,
-section[data-testid="stSidebar"] textarea::placeholder,
-section[data-testid="stSidebar"] .stTextInput input::placeholder,
-section[data-testid="stSidebar"] .stTextArea textarea::placeholder {
+section[data-testid="stSidebar"] div[data-baseweb="input"] input::placeholder {
+    color: #999999 !important;
+    opacity: 1 !important;
+}
+section[data-testid="stSidebar"] div[data-baseweb="textarea"] textarea {
+    color: #222222 !important;
+    background-color: #ffffff !important;
+    border: 1px solid #b3dff5 !important;
+    border-radius: 6px !important;
+}
+section[data-testid="stSidebar"] div[data-baseweb="textarea"] textarea::placeholder {
     color: #999999 !important;
     opacity: 1 !important;
 }
