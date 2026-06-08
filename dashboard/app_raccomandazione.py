@@ -75,7 +75,7 @@ section[data-testid="stSidebar"] > div:first-child {
     background: linear-gradient(175deg, #0d2d44 0%, #25465D 40%, #1a6a9a 80%, #4FC3F7 100%) !important;
     box-shadow: 4px 0 24px rgba(0,0,0,0.2);
 }
-section[data-testid="stSidebar"] *:not(input):not(textarea):not([data-testid="stExpander"] summary):not([data-testid="stExpander"] summary *) {
+section[data-testid="stSidebar"] *:not([data-testid="stExpander"] summary):not([data-testid="stExpander"] summary *) {
     color: #e8f4fb !important;
     font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif !important;
 }
@@ -103,26 +103,11 @@ section[data-testid="stSidebar"] label {
     letter-spacing: 0.09em !important;
     text-transform: uppercase !important;
     color: #b3dff5 !important;
-}
-
-/* ===== SLIDER SIDEBAR ===== */
+} 
 section[data-testid="stSidebar"] div[data-testid="stSlider"] div[role="slider"] {
     background-color: #4FC3F7 !important;
     border-color: #4FC3F7 !important;
 }
-section[data-testid="stSidebar"] div[data-testid="stSlider"] [data-testid="stSliderTrackFill"] {
-    background: #25465D !important;
-    background-color: #25465D !important;
-}
-section[data-testid="stSidebar"] div[data-testid="stSlider"] div[data-baseweb="slider"] > div > div > div {
-    background: #25465D !important;
-    background-color: #25465D !important;
-}
-section[data-testid="stSidebar"] [data-testid="stSlider"] * {
-    --slider-track-fill-color: #25465D !important;
-}
-
-/* ===== MULTISELECT SIDEBAR ===== */
 section[data-testid="stSidebar"] div[data-testid="stMultiSelect"] > div > div {
     background-color: rgba(255,255,255,0.08) !important;
     border: 1px solid rgba(255,255,255,0.2) !important;
@@ -132,8 +117,6 @@ section[data-testid="stSidebar"] div[data-testid="stMultiSelect"] span[data-base
     background-color: rgba(79,195,247,0.3) !important;
     border-radius: 6px !important;
 }
-
-/* ===== BOTTONI SIDEBAR ===== */
 div[data-testid="stSidebar"] .stButton > button {
     width: 100%;
     background: rgba(255,255,255,0.07);
@@ -154,61 +137,6 @@ div[data-testid="stSidebar"] .stButton > button:hover {
     transform: translateX(2px);
 }
 
-/* Bottone primario nella sidebar (Cerca luoghi) */
-div[data-testid="stSidebar"] .stButton button[kind="primary"],
-div[data-testid="stSidebar"] button[data-testid="baseButton-primary"],
-section[data-testid="stSidebar"] .stButton button[data-baseweb="button"][kind="primary"] {
-    background-color: #4FC3F7 !important;
-    color: #ffffff !important;
-    border: 1px solid #4FC3F7 !important;
-    box-shadow: none !important;
-    font-weight: 600 !important;
-}
-div[data-testid="stSidebar"] .stButton button[kind="primary"]:hover,
-div[data-testid="stSidebar"] button[data-testid="baseButton-primary"]:hover,
-section[data-testid="stSidebar"] .stButton button[data-baseweb="button"][kind="primary"]:hover {
-    background-color: #0299c7 !important;
-    border-color: #0299c7 !important;
-    color: #ffffff !important;
-}
-
-/* Radio button nella sidebar: selezione azzurra */
-section[data-testid="stSidebar"] div[data-testid="stRadio"] label {
-    color: #ffffff !important;
-    font-weight: 600 !important;
-}
-section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"] label > div:first-child {
-    background-color: #4FC3F7 !important;
-    border-color: #4FC3F7 !important;
-}
-section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"] label > div:first-child > div {
-    background-color: #ffffff !important;
-}
-
-/* ===== INPUT DI TESTO NELLA SIDEBAR ===== */
-/* Selettore specifico per l'input di Streamlit */
-section[data-testid="stSidebar"] div[data-baseweb="input"] input {
-    color: #222222 !important;
-    background-color: #ffffff !important;
-    border: 1px solid #b3dff5 !important;
-    border-radius: 6px !important;
-}
-section[data-testid="stSidebar"] div[data-baseweb="input"] input::placeholder {
-    color: #999999 !important;
-    opacity: 1 !important;
-}
-section[data-testid="stSidebar"] div[data-baseweb="textarea"] textarea {
-    color: #222222 !important;
-    background-color: #ffffff !important;
-    border: 1px solid #b3dff5 !important;
-    border-radius: 6px !important;
-}
-section[data-testid="stSidebar"] div[data-baseweb="textarea"] textarea::placeholder {
-    color: #999999 !important;
-    opacity: 1 !important;
-}
-
-/* Header nativo e menu */
 header[data-testid="stHeader"] { background: transparent !important; }
 #MainMenu { visibility: hidden; }
 footer { visibility: hidden; }
@@ -253,6 +181,13 @@ footer { visibility: hidden; }
     margin: 0 0 1rem 0; letter-spacing: -0.01em;
 }
 
+/* Nav title sidebar */
+.nav-title {
+    font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: #b3dff5 !important; margin-bottom: 0.5rem; display: block;
+}
+
 /* KPI card */
 .kpi-card {
     background: #ffffff;
@@ -284,7 +219,7 @@ footer { visibility: hidden; }
 /* Divider */
 .divider { height: 1px; background: #b3dff5; margin: 1.5rem 0; }
 
-/* Insight box */
+/* Insight box (spiegazione raccomandazione) */
 .insight-box {
     background: #ffffff;
     border: 1px solid #b3dff5;
@@ -324,6 +259,8 @@ footer { visibility: hidden; }
     font-weight: 700;
     letter-spacing: 0.5px;
     float: right;
+}
+            .score-badge {
     white-space: nowrap;
     flex-shrink: 0;
 }
@@ -357,8 +294,7 @@ div[data-testid="stMainBlockContainer"] div[data-testid="stSelectbox"] > div > d
     border: 1.5px solid #b3dff5 !important;
     border-radius: 8px !important;
 }
-
-[data-testid="stAlert"] {
+            [data-testid="stAlert"] {
     color: #ffffff !important;
 }
 [data-testid="stAlert"] p {
@@ -374,8 +310,12 @@ section[data-testid="stSidebar"] [data-baseweb="tag"] span {
 section[data-testid="stSidebar"] [data-baseweb="tag"] button {
     color: #ffffff !important;
 }
-
-[data-testid="stExpander"] {
+            /* Slider thumb */
+section[data-testid="stSidebar"] [data-testid="stSlider"] div[role="slider"] {
+    background-color: #4FC3F7 !important;
+    border-color: #4FC3F7 !important;
+}
+            [data-testid="stExpander"] {
     background-color: #25465D !important;
     border-radius: 14px !important;
     border: none !important;
@@ -384,13 +324,12 @@ section[data-testid="stSidebar"] [data-baseweb="tag"] button {
 [data-testid="stExpander"] strong {
     color: #ffffff !important;
 }
-section[data-testid="stSidebar"] [data-testid="stExpander"] label {
+            section[data-testid="stSidebar"] [data-testid="stExpander"] label {
     text-transform: none !important;
     letter-spacing: normal !important;
     font-size: 0.85rem !important;
 }
-
-/* === LIKERT SCALE - riduzione testo === */
+/* === LIKERT SCALE - FORZA RIDUZIONE TESTO === */
 section[data-testid="stSidebar"] [data-baseweb="slider"] span,
 section[data-testid="stSidebar"] .stSelectSlider span,
 section[data-testid="stSidebar"] div[role="slider"] + div span,
@@ -399,10 +338,10 @@ section[data-testid="stSidebar"] [data-baseweb="slider"] div > span,
 section[data-testid="stSidebar"] .stSlider div[data-baseweb="slider"] * {
     font-size: 0.58rem !important;
     line-height: 1.0 !important;
-    color: #a8d0f0 !important;
+    color: #a8d0f0 !important;   /* colore più chiaro per distinguersi */
 }
 
-/* Nome del tema */
+/* Nome del tema (Archeologia, Arte antica...) */
 section[data-testid="stSidebar"] .stSlider label {
     font-size: 0.80rem !important;
 }
@@ -412,21 +351,24 @@ section[data-testid="stSidebar"] .stSlider {
     margin-top: 0.6rem !important;
     margin-bottom: 0.7rem !important;
 }
-
-/* Nomi dei TEMI in grassetto */
+/* Nomi dei TEMI in GRASSETTO + più visibile */
 section[data-testid="stSidebar"] .stSlider label,
 section[data-testid="stSidebar"] label[for*="tema_"],
 section[data-testid="stSidebar"] .stSelectSlider label {
-    font-weight: 800 !important;
+    font-weight: 800 !important;           /* Grassetto forte */
     font-size: 0.83rem !important;
-    color: #ffffff !important;
+    color: #ffffff !important;             /* Bianco per contrasto */
     letter-spacing: 0.03em !important;
 }
 
+/* Opzionale: un po' di spazio sopra ogni slider */
 section[data-testid="stSidebar"] .stSlider {
     margin-top: 0.7rem !important;
 }
+
 </style>
+
+
 """, unsafe_allow_html=True)
 # ── Caricamento dataset ───────────────────────────────────────────────────────
 
