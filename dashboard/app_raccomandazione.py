@@ -103,15 +103,25 @@ section[data-testid="stSidebar"] label {
     letter-spacing: 0.09em !important;
     text-transform: uppercase !important;
     color: #b3dff5 !important;
-} 
-
-/* === SLIDER SIDEBAR (identico allo shared) === */
-section[data-testid="stSidebar"] div[data-testid="stSlider"] div[role="slider"] {
-    background-color: #4FC3F7 !important;
-    border-color: #4FC3F7 !important;
 }
 
-/* === MULTISELECT SIDEBAR === */
+/* ===== SLIDER COMPLETO (barra + pollice) ===== */
+/* Traccia inattiva (sfondo del binario) */
+section[data-testid="stSidebar"] div[data-testid="stSlider"] div[data-baseweb="slider"] > div:first-child {
+    background-color: #cce5f5 !important;
+}
+/* Barra attiva (la parte colorata che si sposta) */
+section[data-testid="stSidebar"] div[data-testid="stSlider"] div[data-baseweb="slider"] > div:first-child > div {
+    background-color: #4FC3F7 !important;
+}
+/* Pollice */
+section[data-testid="stSidebar"] div[data-testid="stSlider"] div[role="slider"] {
+    background-color: #4FC3F7 !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: none !important;
+}
+
+/* ===== MULTISELECT SIDEBAR ===== */
 section[data-testid="stSidebar"] div[data-testid="stMultiSelect"] > div > div {
     background-color: rgba(255,255,255,0.08) !important;
     border: 1px solid rgba(255,255,255,0.2) !important;
@@ -122,7 +132,7 @@ section[data-testid="stSidebar"] div[data-testid="stMultiSelect"] span[data-base
     border-radius: 6px !important;
 }
 
-/* === BOTTONI SIDEBAR (identico allo shared) === */
+/* ===== BOTTONI SIDEBAR ===== */
 div[data-testid="stSidebar"] .stButton > button {
     width: 100%;
     background: rgba(255,255,255,0.07);
@@ -219,7 +229,7 @@ footer { visibility: hidden; }
 /* Divider */
 .divider { height: 1px; background: #b3dff5; margin: 1.5rem 0; }
 
-/* Insight box (spiegazione raccomandazione) */
+/* Insight box */
 .insight-box {
     background: #ffffff;
     border: 1px solid #b3dff5;
@@ -360,19 +370,17 @@ section[data-testid="stSidebar"] .stSelectSlider label {
     letter-spacing: 0.03em !important;
 }
 
-/* Opzionale: spazio sopra ogni slider */
 section[data-testid="stSidebar"] .stSlider {
     margin-top: 0.7rem !important;
 }
 
-/* === BOTTONE PRIMARIO (mantenuto come il tuo design originale) === */
+/* ===== BOTTONE PRIMARIO (azzurro, come nel tema) ===== */
 button[data-testid="baseButton-primary"],
 .stButton button[data-baseweb="button"][kind="primary"] {
     background-color: #4FC3F7 !important;
     color: white !important;
     border: none !important;
 }
-
 button[data-testid="baseButton-primary"]:hover,
 .stButton button[data-baseweb="button"][kind="primary"]:hover {
     background-color: #0299c7 !important;
