@@ -187,21 +187,23 @@ section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup
 
 /* ===== INPUT DI TESTO NELLA SIDEBAR (testo scuro, sfondo bianco) ===== */
 section[data-testid="stSidebar"] input[type="text"],
-section[data-testid="stSidebar"] input[type="text"]::placeholder,
+section[data-testid="stSidebar"] input[type="text"]:focus,
 section[data-testid="stSidebar"] textarea,
+section[data-testid="stSidebar"] textarea:focus,
 section[data-testid="stSidebar"] .stTextInput input,
-section[data-testid="stSidebar"] .stTextArea textarea {
+section[data-testid="stSidebar"] .stTextInput input:focus,
+section[data-testid="stSidebar"] .stTextArea textarea,
+section[data-testid="stSidebar"] .stTextArea textarea:focus {
     color: #222222 !important;
     background-color: #ffffff !important;
     border: 1px solid #b3dff5 !important;
     border-radius: 6px !important;
+    outline: none !important;
 }
-section[data-testid="stSidebar"] input[type="text"]:focus,
-section[data-testid="stSidebar"] .stTextInput input:focus {
-    border-color: #4FC3F7 !important;
-    box-shadow: 0 0 0 2px rgba(79,195,247,0.2) !important;
-}
-section[data-testid="stSidebar"] ::placeholder {
+section[data-testid="stSidebar"] input[type="text"]::placeholder,
+section[data-testid="stSidebar"] textarea::placeholder,
+section[data-testid="stSidebar"] .stTextInput input::placeholder,
+section[data-testid="stSidebar"] .stTextArea textarea::placeholder {
     color: #999999 !important;
     opacity: 1 !important;
 }
