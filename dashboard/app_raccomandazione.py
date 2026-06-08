@@ -366,37 +366,25 @@ section[data-testid="stSidebar"] .stSelectSlider label {
 section[data-testid="stSidebar"] .stSlider {
     margin-top: 0.7rem !important;
 }
-/* Slider track attivo */
-section[data-testid="stSidebar"] [data-testid="stSlider"] [data-baseweb="slider"] div[data-testid="stSliderTrackFill"] {
-    background-color: #F0951D !important;
-}
-
-/* Slider thumb */
-section[data-testid="stSidebar"] [data-testid="stSlider"] div[role="slider"] {
+/* Forza colore arancione su tutti gli elementi interattivi della sidebar */
+section[data-testid="stSidebar"] [role="slider"] {
     background-color: #F0951D !important;
     border-color: #F0951D !important;
 }
-
-/* Bottone primario */
-section[data-testid="stSidebar"] .stButton > button[kind="primaryFormSubmit"],
-section[data-testid="stSidebar"] button[data-testid="baseButton-primary"] {
+section[data-testid="stSidebar"] .st-emotion-cache-1inwz65,
+section[data-testid="stSidebar"] [data-baseweb="slider"] [data-testid="stSliderTrackFill"] {
+    background-color: #F0951D !important;
+}
+section[data-testid="stSidebar"] button[kind="primary"],
+section[data-testid="stSidebar"] button[data-testid="baseButton-primary"],
+section[data-testid="stSidebar"] .stButton button[type="submit"],
+section[data-testid="stSidebar"] div[data-testid="stFormSubmitButton"] button {
     background-color: #F0951D !important;
     border-color: #F0951D !important;
     color: #ffffff !important;
 }
-section[data-testid="stSidebar"] button[data-testid="baseButton-primary"]:hover {
-    background-color: #d4820f !important;
-    border-color: #d4820f !important;
-}
-
-/* Radio button selezionato */
-section[data-testid="stSidebar"] [data-testid="stRadio"] label div[data-checked="true"] {
-    background-color: #F0951D !important;
-    border-color: #F0951D !important;
-}
-
-/* Checkbox selezionato */
-section[data-testid="stSidebar"] [data-testid="stCheckbox"] label div[data-checked="true"] {
+section[data-testid="stSidebar"] [data-baseweb="radio"] [data-checked="true"] div,
+section[data-testid="stSidebar"] [data-baseweb="radio"] input:checked + div {
     background-color: #F0951D !important;
     border-color: #F0951D !important;
 }
