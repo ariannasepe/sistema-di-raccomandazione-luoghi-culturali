@@ -104,9 +104,32 @@ section[data-testid="stSidebar"] label {
     text-transform: uppercase !important;
     color: #b3dff5 !important;
 } 
-section[data-testid="stSidebar"] div[data-testid="stSlider"] div[role="slider"] {
+/* ==================== SLIDER (stile identico alla dashboard vecchia) ==================== */
+section[data-testid="stSidebar"] div[data-testid="stSlider"] div[role="slider"],
+section[data-testid="stSidebar"] [data-baseweb="slider"] div[role="slider"] {
     background-color: #4FC3F7 !important;
     border-color: #4FC3F7 !important;
+    border: 2px solid #ffffff !important;
+}
+
+/* Linea riempita dello slider */
+section[data-testid="stSidebar"] [data-baseweb="slider"] > div:first-child > div {
+    background: #4FC3F7 !important;
+}
+
+/* ==================== BOTTONE PRIMARIO "Cerca luoghi" ==================== */
+button[data-testid="baseButton-primary"],
+button.kind-primary {
+    background-color: #4FC3F7 !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+}
+button[data-testid="baseButton-primary"]:hover,
+button.kind-primary:hover {
+    background-color: #0299c7 !important;
+    color: #ffffff !important;
 }
 section[data-testid="stSidebar"] div[data-testid="stMultiSelect"] > div > div {
     background-color: rgba(255,255,255,0.08) !important;
