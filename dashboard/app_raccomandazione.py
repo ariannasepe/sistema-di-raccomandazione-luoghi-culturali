@@ -365,10 +365,32 @@ section[data-testid="stSidebar"] .stSelectSlider label {
 section[data-testid="stSidebar"] .stSlider {
     margin-top: 0.7rem !important;
 }
+/* ==================== FIX FORTE SLIDER + BOTTONE (da aggiungere in fondo) ==================== */
 
-</style>
+/* Slider - Linea e pallino */
+section[data-testid="stSidebar"] [data-baseweb="slider"] > div:first-child > div {
+    background: #4FC3F7 !important;
+}
 
+section[data-testid="stSidebar"] [data-baseweb="slider"] div[role="slider"] {
+    background-color: #4FC3F7 !important !important;
+    border: 3px solid white !important;
+    box-shadow: 0 0 0 4px rgba(79,195,247,0.3) !important;
+}
 
+/* Bottone primario "Cerca luoghi" */
+button[data-testid="baseButton-primary"],
+.stButton button[data-baseweb="button"][kind="primary"] {
+    background-color: #4FC3F7 !important;
+    color: white !important;
+    border: none !important;
+}
+
+button[data-testid="baseButton-primary"]:hover,
+.stButton button[data-baseweb="button"][kind="primary"]:hover {
+    background-color: #0299c7 !important;
+    color: white !important;
+}
 </style>
 
 
