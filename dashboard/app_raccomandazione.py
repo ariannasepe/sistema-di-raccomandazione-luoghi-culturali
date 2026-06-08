@@ -56,7 +56,7 @@ st.markdown("""
     --c-text:    #222222;
     --c-muted:   #34465A;
     --c-blue:    #25465D;
-    --c-accent:  #4FC3F7;
+    --c-accent:  #F0951D;
 }
 
 html, body, [class*="css"] {
@@ -75,48 +75,46 @@ section[data-testid="stSidebar"] > div:first-child {
     background: linear-gradient(175deg, #0d2d44 0%, #25465D 40%, #1a6a9a 80%, #4FC3F7 100%) !important;
     box-shadow: 4px 0 24px rgba(0,0,0,0.2);
 }
-section[data-testid="stSidebar"] *:not([data-testid="stExpander"] summary):not([data-testid="stExpander"] summary *) {
-    color: #e8f4fb !important;
-    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif !important;
+
+/* ==================== SLIDERS ==================== */
+section[data-testid="stSidebar"] [data-baseweb="slider"] > div:first-child {
+    background: #e5e7eb !important;           /* traccia grigia */
+}
+section[data-testid="stSidebar"] [data-baseweb="slider"] > div:first-child > div {
+    background: var(--c-accent) !important;   /* parte riempita arancione */
+}
+section[data-testid="stSidebar"] [data-testid="stSlider"] div[role="slider"],
+section[data-testid="stSidebar"] [data-baseweb="slider"] div[role="slider"] {
+    background-color: var(--c-accent) !important;
+    border: 3px solid white !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2) !important;
 }
 
-section[data-testid="stSidebar"] [data-testid="stExpander"] summary {
-    text-transform: none !important;
-    letter-spacing: normal !important;
-    font-size: 0.85rem !important;
+/* Radio buttons (Regione/Comune) - mantengono pallino bianco */
+section[data-testid="stSidebar"] [data-testid="stRadio"] label {
     color: #e8f4fb !important;
-    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif !important;
 }
-section[data-testid="stSidebar"] h2,
-section[data-testid="stSidebar"] h3,
-section[data-testid="stSidebar"] h4 {
-    color: #ffffff !important;
-    font-weight: 700 !important;
+section[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] {
+    gap: 8px;
 }
-section[data-testid="stSidebar"] hr {
-    border-color: rgba(255,255,255,0.15) !important;
-    margin: 1rem 0;
-}
-section[data-testid="stSidebar"] label {
-    font-size: 0.72rem !important;
+
+/* ==================== BUTTONS ==================== */
+/* Pulsante primario "Cerca luoghi" */
+button[data-testid="baseButton-primary"] {
+    background-color: var(--c-accent) !important;
+    color: white !important;
+    border: none !important;
     font-weight: 600 !important;
-    letter-spacing: 0.09em !important;
-    text-transform: uppercase !important;
-    color: #b3dff5 !important;
-} 
-section[data-testid="stSidebar"] div[data-testid="stSlider"] div[role="slider"] {
-    background-color: #4FC3F7 !important;
-    border-color: #4FC3F7 !important;
-}
-section[data-testid="stSidebar"] div[data-testid="stMultiSelect"] > div > div {
-    background-color: rgba(255,255,255,0.08) !important;
-    border: 1px solid rgba(255,255,255,0.2) !important;
     border-radius: 8px !important;
+    padding: 0.75rem 1.5rem !important;
 }
-section[data-testid="stSidebar"] div[data-testid="stMultiSelect"] span[data-baseweb="tag"] {
-    background-color: rgba(79,195,247,0.3) !important;
-    border-radius: 6px !important;
+button[data-testid="baseButton-primary"]:hover {
+    background-color: #e07f0c !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(240, 149, 29, 0.5) !important;
 }
+
+/* Altri pulsanti nella sidebar */
 div[data-testid="stSidebar"] .stButton > button {
     width: 100%;
     background: rgba(255,255,255,0.07);
@@ -134,242 +132,55 @@ div[data-testid="stSidebar"] .stButton > button:hover {
     background: rgba(255,255,255,0.18);
     border-color: rgba(255,255,255,0.35);
     color: #ffffff !important;
-    transform: translateX(2px);
 }
 
-header[data-testid="stHeader"] { background: transparent !important; }
-#MainMenu { visibility: hidden; }
-footer { visibility: hidden; }
-[data-testid="stSidebarNav"],
-[data-testid="stSidebarNavItems"],
-[data-testid="stSidebarNavSeparator"] { display: none !important; }
-[data-testid="collapsedControl"] { display: flex !important; }
-[data-testid="stSidebarCollapseButton"] {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* Main header */
-.main-header {
-    background: #ffffff;
-    padding: 1.2rem 2rem;
-    border-radius: 14px;
-    margin-bottom: 1.6rem;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-}
-.main-header img { width:70px; height:70px; object-fit:contain; flex-shrink:0; }
-.main-header h1 {
-    color: #25465D !important;
-    font-size: 1.6rem; font-weight: 800;
-    margin: 0 0 0.2rem 0; letter-spacing: -0.02em;
-}
-.main-header p { color: #555 !important; margin: 0; font-size: 0.82rem; }
-
-/* Section labels */
+/* Altri elementi accent */
 .section-label {
-    font-size: 0.63rem; font-weight: 700;
-    letter-spacing: 2.5px; text-transform: uppercase;
-    color: #4FC3F7; margin-bottom: 0.2rem;
-}
-.section-title {
-    font-size: 1.4rem; font-weight: 700;
-    color: #25465D !important;
-    margin: 0 0 1rem 0; letter-spacing: -0.01em;
-}
-
-/* Nav title sidebar */
-.nav-title {
-    font-size: 0.6rem; font-weight: 700;
-    letter-spacing: 2.5px; text-transform: uppercase;
-    color: #b3dff5 !important; margin-bottom: 0.5rem; display: block;
-}
-
-/* KPI card */
-.kpi-card {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 1.1rem 1.3rem;
-    border-left: 4px solid #25465D;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-    position: relative; overflow: hidden;
-    min-height: 110px;
-}
-.kpi-card:hover {
-    box-shadow: 0 8px 24px rgba(37,70,93,0.18) !important;
-    transform: translateY(-2px);
-    transition: all 0.2s ease;
-}
-.kpi-card .kpi-label {
-    font-size: 0.63rem; font-weight: 700;
-    letter-spacing: 2px; text-transform: uppercase;
-    color: #666; margin-bottom: 0.4rem;
-}
-.kpi-card .kpi-value {
-    font-size: 2rem; font-weight: 800;
-    color: #25465D; line-height: 1; margin-bottom: 0.25rem;
-}
-.kpi-card .kpi-sub {
-    font-size: 0.73rem; color: #34465A; font-weight: 400;
-}
-
-/* Divider */
-.divider { height: 1px; background: #b3dff5; margin: 1.5rem 0; }
-
-/* Insight box (spiegazione raccomandazione) */
-.insight-box {
-    background: #ffffff;
-    border: 1px solid #b3dff5;
-    border-left: 3px solid #25465D;
-    border-radius: 0 12px 12px 0;
-    padding: 1rem 1.2rem;
-    margin-top: 0.5rem;
-    font-size: 0.82rem;
-    line-height: 1.6;
-    color: #222222;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-
-/* Scheda risultato */
-.scheda {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 1.2rem 1.4rem;
-    border-left: 4px solid #25465D;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    margin-bottom: 0.8rem;
-}
-.scheda-title {
-    font-size: 1rem; font-weight: 700;
-    color: #25465D; margin-bottom: 0.15rem;
-}
-.scheda-meta {
-    font-size: 0.78rem; color: #34465A; margin-bottom: 0.5rem;
+    color: var(--c-accent) !important;
 }
 .score-badge {
-    display: inline-block;
-    background: #25465D;
-    color: #ffffff;
-    border-radius: 20px;
-    padding: 2px 12px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    float: right;
-}
-            .score-badge {
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-.tipologia-tag {
-    display: inline-block;
-    background: #dbeafe;
-    color: #1a6a9a;
-    border-radius: 4px;
-    padding: 1px 8px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-right: 4px;
-}
-.tema-tag {
-    display: inline-block;
-    background: #e2f0fb;
-    color: #25465D;
-    border-radius: 4px;
-    padding: 1px 8px;
-    font-size: 0.75rem;
-    font-weight: 600;
+    background: var(--c-accent) !important;
 }
 
-/* Dataframe */
-[data-testid="stDataFrame"] { background: #f4faff; border-radius: 12px; overflow: hidden; }
+/* ====================== RESTO DEL CSS ORIGINALE ====================== */
+section[data-testid="stSidebar"] *:not([data-testid="stExpander"] summary):not([data-testid="stExpander"] summary *) {
+    color: #e8f4fb !important;
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif !important;
+}
 
-/* Selectbox nel main */
-div[data-testid="stMainBlockContainer"] div[data-testid="stSelectbox"] > div > div {
-    background-color: #ffffff !important;
-    color: #111 !important;
-    border: 1.5px solid #b3dff5 !important;
-    border-radius: 8px !important;
-}
-            [data-testid="stAlert"] {
-    color: #ffffff !important;
-}
-[data-testid="stAlert"] p {
-    color: #ffffff !important;
-}
-section[data-testid="stSidebar"] [data-baseweb="tag"] {
-    background-color: rgba(79,195,247,0.3) !important;
-    border-color: rgba(79,195,247,0.5) !important;
-}
-section[data-testid="stSidebar"] [data-baseweb="tag"] span {
-    color: #ffffff !important;
-}
-section[data-testid="stSidebar"] [data-baseweb="tag"] button {
-    color: #ffffff !important;
-}
-            /* Slider thumb */
-section[data-testid="stSidebar"] [data-testid="stSlider"] div[role="slider"] {
-    background-color: #4FC3F7 !important;
-    border-color: #4FC3F7 !important;
-}
-            [data-testid="stExpander"] {
-    background-color: #25465D !important;
-    border-radius: 14px !important;
-    border: none !important;
-}
-[data-testid="stExpander"] p,
-[data-testid="stExpander"] strong {
-    color: #ffffff !important;
-}
-            section[data-testid="stSidebar"] [data-testid="stExpander"] label {
+section[data-testid="stSidebar"] [data-testid="stExpander"] summary {
     text-transform: none !important;
     letter-spacing: normal !important;
     font-size: 0.85rem !important;
+    color: #e8f4fb !important;
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif !important;
 }
-/* === LIKERT SCALE - FORZA RIDUZIONE TESTO === */
+section[data-testid="stSidebar"] h2, section[data-testid="stSidebar"] h3, section[data-testid="stSidebar"] h4 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+section[data-testid="stSidebar"] hr {
+    border-color: rgba(255,255,255,0.15) !important;
+    margin: 1rem 0;
+}
+section[data-testid="stSidebar"] label {
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.09em !important;
+    text-transform: uppercase !important;
+    color: #b3dff5 !important;
+} 
+
+.main-header h1 { color: #25465D !important; }
+.section-title { color: #25465D !important; }
+
+/* Slider testo piccolo */
 section[data-testid="stSidebar"] [data-baseweb="slider"] span,
-section[data-testid="stSidebar"] .stSelectSlider span,
-section[data-testid="stSidebar"] div[role="slider"] + div span,
-section[data-testid="stSidebar"] [data-baseweb="slider"] .css-1cpxqw9 span,
-section[data-testid="stSidebar"] [data-baseweb="slider"] div > span,
-section[data-testid="stSidebar"] .stSlider div[data-baseweb="slider"] * {
-    font-size: 0.58rem !important;
-    line-height: 1.0 !important;
-    color: #a8d0f0 !important;   /* colore più chiaro per distinguersi */
-}
-
-/* Nome del tema (Archeologia, Arte antica...) */
 section[data-testid="stSidebar"] .stSlider label {
-    font-size: 0.80rem !important;
+    font-size: 0.58rem !important;
 }
-
-/* Spazio extra tra tema e slider */
-section[data-testid="stSidebar"] .stSlider {
-    margin-top: 0.6rem !important;
-    margin-bottom: 0.7rem !important;
-}
-/* Nomi dei TEMI in GRASSETTO + più visibile */
-section[data-testid="stSidebar"] .stSlider label,
-section[data-testid="stSidebar"] label[for*="tema_"],
-section[data-testid="stSidebar"] .stSelectSlider label {
-    font-weight: 800 !important;           /* Grassetto forte */
-    font-size: 0.83rem !important;
-    color: #ffffff !important;             /* Bianco per contrasto */
-    letter-spacing: 0.03em !important;
-}
-
-/* Opzionale: un po' di spazio sopra ogni slider */
-section[data-testid="stSidebar"] .stSlider {
-    margin-top: 0.7rem !important;
-}
-
 </style>
-
 """, unsafe_allow_html=True)
-
 # ── Caricamento dataset ───────────────────────────────────────────────────────
 
 @st.cache_data
