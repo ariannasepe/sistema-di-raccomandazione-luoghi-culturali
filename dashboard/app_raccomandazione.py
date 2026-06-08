@@ -106,7 +106,7 @@ section[data-testid="stSidebar"] label {
     color: #b3dff5 !important;
 }
 
-/* ===== SLIDER SIDEBAR (barra blu scuro, pollice azzurro) ===== */
+/* ===== SLIDER SIDEBAR ===== */
 section[data-testid="stSidebar"] div[data-testid="stSlider"] div[role="slider"] {
     background-color: #4FC3F7 !important;
     border-color: #4FC3F7 !important;
@@ -134,7 +134,7 @@ section[data-testid="stSidebar"] div[data-testid="stMultiSelect"] span[data-base
     border-radius: 6px !important;
 }
 
-/* ===== BOTTONI SIDEBAR (normali) ===== */
+/* ===== BOTTONI SIDEBAR ===== */
 div[data-testid="stSidebar"] .stButton > button {
     width: 100%;
     background: rgba(255,255,255,0.07);
@@ -155,9 +155,9 @@ div[data-testid="stSidebar"] .stButton > button:hover {
     transform: translateX(2px);
 }
 
-/* Bottone primario nella sidebar – regola ultra-specifica */
-section[data-testid="stSidebar"] div[data-testid="stButton"] button[kind="primary"],
-section[data-testid="stSidebar"] button[data-testid="baseButton-primary"],
+/* Bottone primario nella sidebar (Cerca luoghi) */
+div[data-testid="stSidebar"] .stButton button[kind="primary"],
+div[data-testid="stSidebar"] button[data-testid="baseButton-primary"],
 section[data-testid="stSidebar"] .stButton button[data-baseweb="button"][kind="primary"] {
     background-color: #4FC3F7 !important;
     color: #ffffff !important;
@@ -165,12 +165,25 @@ section[data-testid="stSidebar"] .stButton button[data-baseweb="button"][kind="p
     box-shadow: none !important;
     font-weight: 600 !important;
 }
-section[data-testid="stSidebar"] div[data-testid="stButton"] button[kind="primary"]:hover,
-section[data-testid="stSidebar"] button[data-testid="baseButton-primary"]:hover,
+div[data-testid="stSidebar"] .stButton button[kind="primary"]:hover,
+div[data-testid="stSidebar"] button[data-testid="baseButton-primary"]:hover,
 section[data-testid="stSidebar"] .stButton button[data-baseweb="button"][kind="primary"]:hover {
     background-color: #0299c7 !important;
     border-color: #0299c7 !important;
     color: #ffffff !important;
+}
+
+/* Radio button nella sidebar: selezione azzurra */
+section[data-testid="stSidebar"] div[data-testid="stRadio"] label {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"] label > div:first-child {
+    background-color: #4FC3F7 !important;
+    border-color: #4FC3F7 !important;
+}
+section[data-testid="stSidebar"] div[data-testid="stRadio"] div[role="radiogroup"] label > div:first-child > div {
+    background-color: #ffffff !important;
 }
 
 /* Header nativo e menu */
@@ -393,7 +406,6 @@ section[data-testid="stSidebar"] .stSlider {
 }
 </style>
 """, unsafe_allow_html=True)
-
 # ── Caricamento dataset ───────────────────────────────────────────────────────
 
 @st.cache_data
