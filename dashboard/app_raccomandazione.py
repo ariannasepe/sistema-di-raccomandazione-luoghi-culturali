@@ -155,17 +155,22 @@ div[data-testid="stSidebar"] .stButton > button:hover {
     transform: translateX(2px);
 }
 
-/* ===== BOTTONE PRIMARIO NELLA SIDEBAR (es. "Cerca luoghi") ===== */
-div[data-testid="stSidebar"] .stButton button[kind="primary"],
-div[data-testid="stSidebar"] button[data-testid="baseButton-primary"] {
+/* Bottone primario nella sidebar – regola ultra-specifica */
+section[data-testid="stSidebar"] div[data-testid="stButton"] button[kind="primary"],
+section[data-testid="stSidebar"] button[data-testid="baseButton-primary"],
+section[data-testid="stSidebar"] .stButton button[data-baseweb="button"][kind="primary"] {
     background-color: #4FC3F7 !important;
-    color: white !important;
-    border: none !important;
+    color: #ffffff !important;
+    border: 1px solid #4FC3F7 !important;
+    box-shadow: none !important;
+    font-weight: 600 !important;
 }
-div[data-testid="stSidebar"] .stButton button[kind="primary"]:hover,
-div[data-testid="stSidebar"] button[data-testid="baseButton-primary"]:hover {
+section[data-testid="stSidebar"] div[data-testid="stButton"] button[kind="primary"]:hover,
+section[data-testid="stSidebar"] button[data-testid="baseButton-primary"]:hover,
+section[data-testid="stSidebar"] .stButton button[data-baseweb="button"][kind="primary"]:hover {
     background-color: #0299c7 !important;
-    color: white !important;
+    border-color: #0299c7 !important;
+    color: #ffffff !important;
 }
 
 /* Header nativo e menu */
