@@ -45,6 +45,8 @@ st.set_page_config(
 )
 
 # ── CSS (identico al progetto principale) ─────────────────────────────────────
+
+st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
@@ -364,9 +366,8 @@ section[data-testid="stSidebar"] .stSelectSlider label {
 section[data-testid="stSidebar"] .stSlider {
     margin-top: 0.7rem !important;
 }
-
 </style>
-
+""", unsafe_allow_html=True)
 
 # ── Caricamento dataset ───────────────────────────────────────────────────────
 
