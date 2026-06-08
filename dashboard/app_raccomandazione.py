@@ -50,76 +50,62 @@ st.markdown("""
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --c-bg:      #4FC3F7;
-    --c-surface: #ffffff;
-    --c-border:  #b3dff5;
-    --c-text:    #222222;
-    --c-muted:   #34465A;
-    --c-blue:    #25465D;
-    --c-accent:  #F0951D;
+    --c-accent: #F0951D;
 }
 
-/* ==================== SLIDERS ==================== */
-/* Traccia dello slider (parte vuota) */
+/* ==================== SLIDERS - SOLO LA LINEA ==================== */
+/* Traccia vuota (parte grigia) */
 section[data-testid="stSidebar"] [data-baseweb="slider"] > div:first-child {
-    background: #334b66 !important;           /* Colore scuro della sidebar */
+    background: #334b66 !important;
 }
 
-/* Parte riempita dello slider */
-section[data-testid="stSidebar"] [data-baseweb="slider"] > div:first-child > div[data-testid="stSliderTrack"] > div {
+/* Linea riempita (la parte colorata) - QUESTA È LA PIÙ IMPORTANTE */
+section[data-testid="stSidebar"] [data-baseweb="slider"] > div:first-child > div {
     background: var(--c-accent) !important;
 }
 
-/* Pallino dello slider */
+/* Pallino dello slider (lasciamo bianco/giallo come da tua richiesta) */
 section[data-testid="stSidebar"] [data-baseweb="slider"] div[role="slider"] {
-    background-color: var(--c-accent) !important;
-    border: 3px solid #ffffff !important;
-    box-shadow: 0 0 0 4px rgba(240, 149, 29, 0.3) !important;
+    background-color: #ffffff !important;
+    border: 3px solid var(--c-accent) !important;
+    box-shadow: 0 0 0 4px rgba(240, 149, 29, 0.4) !important;
 }
 
-/* ==================== BUTTON "CERCA LUOGHI" ==================== */
-button[data-testid="baseButton-primary"] {
+/* ==================== RADIO BUTTONS (Regione / Comune) ==================== */
+section[data-testid="stSidebar"] [data-testid="stRadio"] label[data-testid="stWidgetLabel"] {
+    color: #e8f4fb !important;
+}
+
+/* Pallino selezionato → arancione */
+section[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radio"][aria-checked="true"] {
     background-color: var(--c-accent) !important;
-    color: #ffffff !important;
+    border-color: var(--c-accent) !important;
+}
+section[data-testid="stSidebar"] [data-testid="stRadio"] div[role="radio"][aria-checked="true"]::before {
+    background-color: white !important;
+}
+
+/* ==================== BOTTONE "CERCA LUOGHI" ==================== */
+button[data-testid="baseButton-primary"],
+button.kind-primary {
+    background-color: var(--c-accent) !important;
+    color: white !important;
     border: none !important;
     font-weight: 600 !important;
     border-radius: 8px !important;
-    padding: 12px 24px !important;
-    box-shadow: 0 4px 12px rgba(240, 149, 29, 0.4) !important;
 }
-button[data-testid="baseButton-primary"]:hover {
+button[data-testid="baseButton-primary"]:hover,
+button.kind-primary:hover {
     background-color: #e07f0c !important;
-    color: #ffffff !important;
-    box-shadow: 0 6px 16px rgba(240, 149, 29, 0.5) !important;
+    color: white !important;
 }
 
-/* Radio buttons (Regione / Comune) */
-section[data-testid="stSidebar"] [data-testid="stRadio"] label {
-    color: #e8f4fb !important;
-}
-
-/* Altri pulsanti nella sidebar */
-div[data-testid="stSidebar"] .stButton > button {
-    background: rgba(255,255,255,0.08) !important;
-    border: 1px solid rgba(255,255,255,0.2) !important;
-    color: #e8f4fb !important;
-}
-
-/* Accent colors */
-.section-label {
-    color: var(--c-accent) !important;
-}
-.score-badge {
-    background: var(--c-accent) !important;
-}
-
-/* ====================== RESTO DEL CSS ORIGINALE ====================== */
+/* ==================== RESTO DEL CSS (mantenuto) ==================== */
 html, body, [class*="css"] {
     font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif !important;
 }
 
 [data-testid="stAppViewContainer"],
-[data-testid="stAppViewBlockContainer"],
 .main, .block-container {
     background-color: #4FC3F7 !important;
 }
@@ -128,20 +114,14 @@ section[data-testid="stSidebar"] > div:first-child {
     background: linear-gradient(175deg, #0d2d44 0%, #25465D 40%, #1a6a9a 80%, #4FC3F7 100%) !important;
 }
 
-section[data-testid="stSidebar"] *:not([data-testid="stExpander"] summary):not([data-testid="stExpander"] summary *) {
-    color: #e8f4fb !important;
+.section-label {
+    color: var(--c-accent) !important;
+}
+.score-badge {
+    background: var(--c-accent) !important;
 }
 
 section[data-testid="stSidebar"] label {
-    color: #b3dff5 !important;
-}
-
-.main-header h1, .section-title {
-    color: #25465D !important;
-}
-
-/* Pulizia generale */
-section[data-testid="stSidebar"] [data-baseweb="slider"] span {
     color: #b3dff5 !important;
 }
 </style>
